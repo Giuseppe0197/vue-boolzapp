@@ -122,7 +122,8 @@ var container = new Vue (
 
             ]
     
-        }
+        },
+
     },
 
 )

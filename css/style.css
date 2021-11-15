@@ -6,14 +6,14 @@
 
 #green-background {
     background-color: #179588;
-    height: 150px;
+    height: 25vh;
     width: 100%;
     position: relative;
 }
 
 #grey-background {
     background-color: #D9DCD6;
-    height: 570px;
+    height: 75vh;
     width: 100%;
     position: relative;
 }
@@ -21,19 +21,19 @@
 main{
     position: absolute;
     top: 50px;
-    left: 5%;
+    left: 2.5%;
     background-color: white;
     height: 90vh;
-    width: calc(100% - 10%);
+    width: calc(100% - 5%);
     display: flex;
 }
 
 #menuLeft {
-    width: 30%;
+    width: 33%;
 }
 
 #menuRight {
-    width: 70%;
+    width: 67%;
 }
 
 /* menu di sinistra */
@@ -72,6 +72,11 @@ main{
     margin-right: 15px;
     font-size: 25px;
     color: #B1B1B1;
+}
+
+#iconsAccount i:hover {
+    color: #575757;
+    cursor: pointer;
 }
 
 /* parte delle notifiche da disattivare o attivare */
@@ -138,12 +143,11 @@ main{
 /* contatti visualizzati */
 
 .containerContacts {
-    height: 50vh;
+    height: 60vh;
     overflow-y: scroll;
 }
 
 #contactsPhone {
-    height: 70px;
     display: flex;
     flex-direction: column;
 }
@@ -151,6 +155,7 @@ main{
 .phoneImage {
     display: flex;
     cursor: pointer;
+    border-bottom: 1px solid #FAFAFA;
 }
 
 .phoneImage:hover {
@@ -158,7 +163,7 @@ main{
 }
 
 .phoneImage img {
-    width: 20%;
+    width: 15%;
     border-radius: 50%;
     margin: 5px 0 5px 10px;
 }
@@ -169,11 +174,13 @@ main{
 
 .spanUsers p {
     color: #B4B6B8;
+    font-size: 12px;
 }
 
 .dateContacts {
     margin-left: auto;
     color: #B4B6B8;
+    font-size: 12px;
 }
 
 /* menu di destra con barra info contatto selezionato */
@@ -190,7 +197,7 @@ main{
 }
 
 #userImageStatus img {
-    width: 15%;
+    width: 18%;
     border-radius: 50%;
     margin: 5px 0 5px 10px;;
 }
@@ -208,6 +215,11 @@ main{
     margin-right: 25px;
     font-size: 25px;
     color: #B1B1B1;
+}
+
+#iconsContact i:hover {
+    color: #575757;
+    cursor: pointer;
 }
 
 /* parte della chat con il contatto */
@@ -285,4 +297,9 @@ main{
 .fa-microphone {
     font-size: 30px;
     color: #B1B1B1;
+}
+
+.fa-microphone:hover, .fa-smile:hover {
+    color: #575757;
+    cursor: pointer;
 }

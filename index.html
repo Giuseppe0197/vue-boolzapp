@@ -80,13 +80,13 @@
     
                             <span>{{contact.userName}}</span>
         
-                            <p>Messaggio</p>
+                            <p>{{contact.messages[contact.messages.length -1].text}}</p>
     
                         </div>
     
                         <div class="dateContacts">
     
-                            10/01/2020 16:15:22
+                            {{contact.messages[contact.messages.length -1].date}}
     
                         </div>
     
