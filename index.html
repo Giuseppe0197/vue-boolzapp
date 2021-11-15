@@ -14,7 +14,7 @@
 
     <div id="grey-background"></div>
 
-    <main>
+    <main id="mainPart">
 
         <div id="menuLeft">
 
@@ -68,9 +68,65 @@
 
             </div>
 
+            <div id="contactsPhone">
+
+                <div class="phoneImage" v-for="contact, i in contacts" v-for="elementUser, i in messages" :key="i">
+
+                    <img :src="contact.profileImage" alt="">
+
+                    <div class="spanUsers">
+
+                        <span>{{contact.userName}}</span>
+    
+                        <!-- <p>{{contact.text}}</p> -->
+
+                    </div>
+
+                    <!-- <div class="dateContacts">
+
+                        {{contact.messages.date}}
+
+                    </div> -->
+
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div id="menuRight"></div>
+        <div id="menuRight">
+
+            <div id="statusUser">
+
+                <div id="userImageStatus">
+
+                    <img src="img/avatar_1.jpg" alt="">
+
+                    <div class="spanUsers userSpan">
+
+                        <span>Michele</span>
+
+                        <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+
+                    </div>
+
+                </div>
+
+                <div id="iconsContact">
+
+                    <i class="fas fa-search"></i>
+
+                    <i class="fas fa-paperclip"></i>
+
+                    <i class="fas fa-ellipsis-v"></i>
+
+                </div>
+
+
+            </div>
+
+        </div>
 
     </main>
 
