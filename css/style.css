@@ -145,6 +145,11 @@ main{
 
 .phoneImage {
     display: flex;
+    cursor: pointer;
+}
+
+.phoneImage:hover {
+    background-color: #EAEAEA;
 }
 
 .phoneImage img {
@@ -203,11 +208,13 @@ main{
 /* parte della chat con il contatto */
 
 #chats {
-    background-image: url("img/background-chat.png");
+    background-image: url("../img/background-chat.png");
+    width: 100%;
+    height: calc(100% - 150px);
+    background-size: cover;
 }
 
 #messageUser{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -224,7 +231,7 @@ main{
     border-radius: 10px;
     margin-right: 30px;
     align-self: flex-end;
-    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .sentMessage p {
@@ -245,5 +252,29 @@ main{
 .receivedMessage p {
     font-size: 10px;
     text-align: right;
+    color: #B1B1B1;
+}
+
+#messageArea {
+    height: 80px;
+    background-color: #F3EEEA;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fa-smile {
+    font-size: 30px;
+    color: #B1B1B1;
+}
+
+#messageArea input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+.fa-microphone {
+    font-size: 30px;
     color: #B1B1B1;
 }

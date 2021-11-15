@@ -70,7 +70,7 @@
 
             <div id="contactsPhone">
 
-                <div class="phoneImage" v-for="contact, i in contacts" v-for="elementUser, i in messages" :key="i">
+                <div class="phoneImage" v-for="contact, i in contacts" :key="i">
 
                     <img :src="contact.profileImage" alt="">
 
@@ -78,15 +78,15 @@
 
                         <span>{{contact.userName}}</span>
     
-                        <!-- <p>{{contact.text}}</p> -->
+                        <p>{{contact.messages.text}}</p>
 
                     </div>
 
-                    <!-- <div class="dateContacts">
+                    <div class="dateContacts">
 
                         {{contact.messages.date}}
 
-                    </div> -->
+                    </div>
 
 
                 </div>
@@ -153,13 +153,23 @@
                     <div class="receivedMessage">
 
                         <span>Tutto fatto!</span>
-                        
+
                         <p>10/01/2020 16:15:22</p>
 
                     </div>
 
                 </div>
 
+
+            </div>
+
+            <div id="messageArea">
+
+                <i class="far fa-smile"></i>
+
+                <input type="text" placeholder="Scrivi un messaggio">
+
+                <i class="fas fa-microphone"></i>
 
             </div>
 
