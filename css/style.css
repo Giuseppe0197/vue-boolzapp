@@ -23,7 +23,7 @@ main{
     top: 50px;
     left: 5%;
     background-color: white;
-    height: 650px;
+    height: 90vh;
     width: calc(100% - 10%);
     display: flex;
 }
@@ -137,6 +137,11 @@ main{
 
 /* contatti visualizzati */
 
+.containerContacts {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
 #contactsPhone {
     height: 70px;
     display: flex;
@@ -212,6 +217,7 @@ main{
     width: 100%;
     height: calc(100% - 150px);
     background-size: cover;
+    overflow-y: scroll;
 }
 
 #messageUser{
@@ -254,6 +260,8 @@ main{
     text-align: right;
     color: #B1B1B1;
 }
+
+/* parte dell'area messaggi */
 
 #messageArea {
     height: 80px;
