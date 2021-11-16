@@ -72,7 +72,7 @@
 
                 <div id="contactsPhone">
     
-                    <div class="phoneImage" v-for="contact, i in contacts" :key="i" @click="changeChat">
+                    <div class="phoneImage" v-for="contact, i in contacts" :key="i" @click="changeChat(chatActive)">
     
                         <img :src="contact.profileImage" alt="">
     
@@ -112,7 +112,7 @@
 
                         <span>{{contacts[chatActive].userName}}</span>
 
-                        <p></p>
+                        <p>Ultimo accesso alle: {{contacts[chatActive].messages[chatActive].date}}</p>
 
                     </div>
 
@@ -133,7 +133,7 @@
 
             <div id="chats">
 
-                <div id="messageUser" v-for="message, i in contacts.messages" :key="i">
+                <div id="messageUser" v-for="message, i in contacts[chatActive].messages" :key="i">
 
                     <div :class="message.status === 'sent' ? 'sentMessage' : 'receivedMessage'">
 

@@ -23,7 +23,7 @@ var container = new Vue (
                 {
                     userName: "Michele",
                     profileImage: "img/avatar_1.jpg",
-                    visible: false,
+                    visible: true,
                     messages: [
 
                         {
@@ -128,9 +128,16 @@ var container = new Vue (
 
         methods: {
 
-            changeChat() {
+            changeChat(chatActive) {
 
-                contacts[chatActive].visible = false;
+                this.contacts.find((element) => {
+                    element.visible = true
+                })
+
+
+                if(this.contacts[chatActive].visible === false){
+                    this.contacts[chatActive].visible = true
+                }
 
             }
 
