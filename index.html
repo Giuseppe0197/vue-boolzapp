@@ -100,7 +100,7 @@
 
         </div>
 
-        <div id="menuRight">
+        <div id="menuRight" >
 
             <div id="statusUser" class="active" >
 
@@ -112,7 +112,7 @@
 
                         <span>{{contacts[chatActive].userName}}</span>
 
-                        <p>Ultimo accesso alle:</p>
+                        <p v-for="message, i in contacts[chatActive].messages" :key="i">Ultimo accesso alle:{{message.date}}</p>
 
                     </div>
 
@@ -133,7 +133,7 @@
 
             <div id="chats">
 
-                <div id="messageUser" v-for="message, i in contacts[chatActive].messages" :key="i" :class="contacts[i].visible === true ? 'noActive' : 'active'">
+                <div id="messageUser" v-for="message, i in contacts[chatActive].messages" :key="i">
 
                     <div :class="message.status === 'sent' ? 'sentMessage' : 'receivedMessage'">
 

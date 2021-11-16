@@ -132,7 +132,7 @@ var container = new Vue (
 
                 this.chatActive = i;
 
-            }
+            },
 
         }
 
