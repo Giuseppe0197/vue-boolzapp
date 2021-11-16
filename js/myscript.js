@@ -14,6 +14,8 @@ var container = new Vue (
 
         data: {
 
+            chatActive: 0,
+
             /* creiamo un'array di oggetti per stampare le icone e successivamente (nelle future mlestone) i vari messaggi in base all'utente selezionato */
 
             contacts: [
@@ -21,7 +23,7 @@ var container = new Vue (
                 {
                     userName: "Michele",
                     profileImage: "img/avatar_1.jpg",
-                    visible: true,
+                    visible: false,
                     messages: [
 
                         {
@@ -123,6 +125,16 @@ var container = new Vue (
             ]
     
         },
+
+        methods: {
+
+            changeChat() {
+
+                contacts[chatActive].visible = false;
+
+            }
+
+        }
 
     },
 

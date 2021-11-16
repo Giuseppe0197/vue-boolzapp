@@ -72,7 +72,7 @@
 
                 <div id="contactsPhone">
     
-                    <div class="phoneImage" v-for="contact, i in contacts" :key="i">
+                    <div class="phoneImage" v-for="contact, i in contacts" :key="i" @click="changeChat">
     
                         <img :src="contact.profileImage" alt="">
     
@@ -102,17 +102,17 @@
 
         <div id="menuRight">
 
-            <div id="statusUser">
+            <div id="statusUser" class="active">
 
                 <div id="userImageStatus">
 
-                    <img src="img/avatar_1.jpg" alt="">
+                    <img :src="contacts[chatActive].profileImage" alt="">
 
                     <div class="spanUsers userSpan">
 
-                        <span>Michele</span>
+                        <span>{{contacts[chatActive].userName}}</span>
 
-                        <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+                        <p></p>
 
                     </div>
 
@@ -133,38 +133,17 @@
 
             <div id="chats">
 
-                <div id="messageUser">
+                <div id="messageUser" v-for="message, i in contacts.messages" :key="i">
 
-                    <div class="sentMessage">
+                    <div :class="message.status === 'sent' ? 'sentMessage' : 'receivedMessage'">
 
-                        <span>Hai portato a spasso il cane?</span>
+                        <span>{{message.text}}</span>
 
-                        <p>10/01/2020 15:30:55</p>
-    
-                    </div>
-    
-                    <div class="sentMessage">
-    
-                        <span>Ricordati di dargli da mangiare</span>
-
-                        <p>10/01/2020 15:50:00</p>
+                        <p>{{message.date}}</p>
     
                     </div>
 
                 </div>
-
-                <div id="messageContact">
-
-                    <div class="receivedMessage">
-
-                        <span>Tutto fatto!</span>
-
-                        <p>10/01/2020 16:15:22</p>
-
-                    </div>
-
-                </div>
-
 
             </div>
 

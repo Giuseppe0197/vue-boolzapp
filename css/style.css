@@ -237,11 +237,6 @@ main{
     flex-direction: column;
 }
 
-#messageContact{
-    display: flex;
-    flex-direction: column;
-}
-
 .sentMessage {
     background-color: #D5F9BA;
     width: 25%;
@@ -264,7 +259,7 @@ main{
     padding: 15px 5px;
     border-radius: 10px;
     margin-left: 30px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .receivedMessage p {
@@ -302,4 +297,14 @@ main{
 .fa-microphone:hover, .fa-smile:hover {
     color: #575757;
     cursor: pointer;
+}
+
+/* classe active per il display block */
+
+.active {
+    display: block;
+}
+
+.noActive {
+    display: none;
 }
