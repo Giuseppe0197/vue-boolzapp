@@ -128,15 +128,12 @@ var container = new Vue (
 
         methods: {
 
-            changeChat(chatActive) {
+            changeChat() {
 
-                this.contacts.find((element) => {
-                    element.visible = true
-                })
+                this.contacts.visible = false
 
-
-                if(this.contacts[chatActive].visible === false){
-                    this.contacts[chatActive].visible = true
+                if(this.contacts.visible === false){
+                    this.contacts.visible = true
                 }
 
             }
