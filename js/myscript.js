@@ -144,18 +144,16 @@ var container = new Vue (
 
         methods: {
 
-            changeChat() {
+            changeChat(i) {
 
                 this.chatActive = i;
 
             },
 
-            messageToSend(j) {
-
-                this.contacts.find((element) => {
-                    element.messages.push(this.newMessage);
-                    setTimeout(() => element.messages.push(this.newAnswer), 1000)
-                })
+            messageToSend() {
+                const element = this.contacts[this.chatActive];
+                element.messages.push(this.newMessage);
+                setTimeout(() => element.messages.push(this.newAnswer), 1000);
 
                 this.newMessage = {
 
