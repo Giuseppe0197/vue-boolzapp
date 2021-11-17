@@ -112,7 +112,7 @@
 
                         <span>{{contacts[chatActive].userName}}</span>
 
-                        <p v-for="message, i in contacts[chatActive].messages" :key="i">Ultimo accesso alle:{{message.date}}</p>
+                        <p>Ultimo accesso alle: 10/01/2020 10:16:05</p>
 
                     </div>
 
@@ -151,7 +151,7 @@
 
                 <i class="far fa-smile"></i>
 
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" v-model="newMessage.text" placeholder="Scrivi un messaggio" @keyup.enter="messageToSend(chatActive)">
 
                 <i class="fas fa-microphone"></i>
 

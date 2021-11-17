@@ -122,7 +122,23 @@ var container = new Vue (
                     ],
                 }
 
-            ]
+            ],
+
+            newMessage: {
+
+                date: "10/01/2020 15:57:00",
+                text: "",
+                status: "sent"
+
+            },
+
+            newAnswer: {
+                
+                date: "10/01/2020 15:58:00",
+                text: "ok",
+                status: "received"
+
+            }
     
         },
 
@@ -133,6 +149,33 @@ var container = new Vue (
                 this.chatActive = i;
 
             },
+
+            messageToSend() {
+
+                
+
+                this.contacts.find((element) => {
+                    element.messages.push(this.newMessage);
+                    setTimeout(() => element.messages.push(this.newAnswer), 1000)
+                })
+
+                this.newMessage = {
+
+                    date: "10/01/2020 15:57:00",
+                    text: "",
+                    status: "sent"
+    
+                }
+
+                this.newAnswer = {
+
+                    date: "10/01/2020 15:58:00",
+                    text: "ok",
+                    status: "received"
+
+                }
+
+            }
 
         }
 
