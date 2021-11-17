@@ -5,6 +5,15 @@ dall’interlocutore (bianco) assegnando due classi CSS diverse
 Visualizzazione dinamica della l ista contatti: t ramite l a direttiva v-for, visualizzare
 nome e i mmagine di ogni contatto */
 
+/* Milestone 2
+ Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+ Click sul contatto mostra la conversazione del contatto cliccato*/
+
+ /* Milestone 3
+ Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+ Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo. 
+ I messaggi devono essere generati solo nella chat attiva in quel momento*/
+
 /* andiamo a richiamare il contenitore per collegarlo a vue */
 
 var container = new Vue (
@@ -13,6 +22,8 @@ var container = new Vue (
         el: "#mainPart",
 
         data: {
+
+            /* creiamo una variabile settata a 0 per starmpare solo il primo elemento nella pagina che poi andrà cambiato */
 
             chatActive: 0,
 
@@ -124,6 +135,8 @@ var container = new Vue (
 
             ],
 
+            /* creiamo due nuovi oggetti per far scrivere il messaggio all'utente e avere una risposta dal computer */
+
             newMessage: {
 
                 date: "10/01/2020 15:57:00",
@@ -142,6 +155,8 @@ var container = new Vue (
     
         },
 
+        /* creiamo una funzione per cambiare l'utente in base al click */
+
         methods: {
 
             changeChat(i) {
@@ -149,6 +164,8 @@ var container = new Vue (
                 this.chatActive = i;
 
             },
+
+            /* creiamo una funzione che permette all'utente di generare il messaggio e farsi rispondere con un altro messaggio (predefinito) dal computer */
 
             messageToSend() {
                 const element = this.contacts[this.chatActive];
