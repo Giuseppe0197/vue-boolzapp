@@ -144,15 +144,13 @@ var container = new Vue (
 
         methods: {
 
-            changeChat(i) {
+            changeChat() {
 
                 this.chatActive = i;
 
             },
 
-            messageToSend() {
-
-                
+            messageToSend(j) {
 
                 this.contacts.find((element) => {
                     element.messages.push(this.newMessage);
