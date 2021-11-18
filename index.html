@@ -141,9 +141,9 @@
 
                         <span>{{message.text}}</span>
 
-                        <span class="optionMessage" @click="blockInfo"><i class="fas fa-angle-down"></i></span>
+                        <span class="optionMessage" @click="blockInfo(i)"><i class="fas fa-angle-down"></i></span>
 
-                        <div class="infoDelete"  :class="contacts[chatActive].visible === false ? 'active' : ''">
+                        <div class="infoDelete" :class="message.miniBox === true ? 'active' : ''">
 
                             <div>Info Messaggio</div>
     
