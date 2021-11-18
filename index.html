@@ -64,7 +64,7 @@
 
                 <i class="fas fa-search"></i>
 
-                <input type="text" placeholder=" Cerca o inizia una nuova chat">
+                <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchUser">
 
             </div>
 
@@ -72,7 +72,7 @@
 
                 <div id="contactsPhone">
     
-                    <div class="phoneImage" v-for="contact, i in contacts" :key="i" @click="changeChat(i)">
+                    <div class="phoneImage" v-for="contact, i in filterUser" :key="i" @click="changeChat(i)">
     
                         <img :src="contact.profileImage" alt="">
     
@@ -138,6 +138,17 @@
                     <div :class="message.status === 'sent' ? 'sentMessage' : 'receivedMessage'">
 
                         <span>{{message.text}}</span>
+
+                        <span class="optionMessage" @click="blockInfo"><i class="fas fa-angle-down"></i></span>
+
+                        <div class="infoDelete"  :class="contacts[chatActive].visible === false ? 'active' : ''">
+
+                            <div>Info Messaggio</div>
+    
+                            <div class="deleteMessage">Cancella Messaggio</div>
+
+                        </div>
+
 
                         <p>{{message.date}}</p>
     

@@ -14,6 +14,9 @@ nome e i mmagine di ogni contatto */
  Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo. 
  I messaggi devono essere generati solo nella chat attiva in quel momento*/
 
+ /* Milestone 4
+  Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite*/
+
 /* andiamo a richiamare il contenitore per collegarlo a vue */
 
 var container = new Vue (
@@ -151,7 +154,11 @@ var container = new Vue (
                 text: "ok",
                 status: "received"
 
-            }
+            },
+
+            /* settiamo una variabile uguale a null per fare il confronto */
+
+            searchUser: null
     
         },
 
@@ -188,6 +195,38 @@ var container = new Vue (
 
                 }
 
+            },
+
+            blockInfo(){
+                const element = this.contacts[this.chatActive];
+
+                if(element.visible === true){
+                    element.visible = false;
+                } else {
+                    element.visible = true
+                }
+                
+            }
+
+        },
+
+        computed: {
+
+            filterUser(){
+
+                if(this.searchUser !== null){
+
+                    return this.contacts.filter((element) =>{
+                        
+                        return this.searchUser.toLowerCase().split("").every(i => element.userName.toLowerCase().includes(i))
+
+                    }) 
+
+                } else {
+
+                    return this.contacts
+
+                }
             }
 
         }
