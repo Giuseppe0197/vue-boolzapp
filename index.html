@@ -73,6 +73,8 @@
                 <div id="contactsPhone">
     
                     <div class="phoneImage" v-for="contact, i in filterUser" :key="i" @click="changeChat(i)">
+
+                        <!-- v-if="contact.userName.toLowerCase().includes(searchUser.toLowerCase())" metodo alternativo per fare la ricerca dei contatti, ma nel v-for di questo div sostituire il filteruser(vale a dire il nome della funzione) con contacts e inserire questo v-if all'interno del div-->
     
                         <img :src="contact.profileImage" alt="">
     

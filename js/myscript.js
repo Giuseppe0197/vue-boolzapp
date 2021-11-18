@@ -159,6 +159,10 @@ var container = new Vue (
             /* settiamo una variabile uguale a null per fare il confronto */
 
             searchUser: null
+
+            /* creazione di un data vuoto che verrà richiamato nel v-model se fatto con il metodo alternativo descritto in html e quindi senza l'ausilio di un computed */
+
+            /* searchUser: "" */
     
         },
 
